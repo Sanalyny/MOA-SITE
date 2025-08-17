@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Создать резюме - MOA</title>
+    <link rel="stylesheet" href="/assets/frontend/styles/index.css" />
+    <link rel="stylesheet" href="/assets/frontend/styles/create-resume.css" />
+    <link rel="stylesheet" href="/assets/frontend/styles/navigation.css" />
+</head>
+
+<body>
+    <header>
+        <div class="age-restriction">18+</div>
+        <h1 class="header-title">Создать резюме</h1>
+        <nav class="purpose">
+            <ul>
+                <li class="unselected-switcher"><a href="resumes.html">Резюме</a></li>
+                <li class="unselected-switcher"><a href="index.html">Вакансии</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="create-resume-container">
+        <div class="form-container">
+            <!-- Личная информация -->
+            <div class="form-section">
+                <h1>Личная информация</h1>
+                <div class="input-group">
+                    <label for="full-name">Полное имя</label>
+                    <input type="text" id="full-name" class="form-input" placeholder="Например: Иван Иванов">
+                </div>
+                <div class="input-group">
+                    <label for="user-photo">Ваше фото</label>
+                    <div class="file-upload-container">
+                        <input type="file" id="user-photo" class="file-input" accept="image/*">
+                        <div class="file-upload-preview">
+                            <div class="upload-placeholder">
+                                <span>Загрузить фото</span>
+                                <small>PNG, JPG до 2MB</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Опыт и навыки -->
+            <div class="form-section">
+                <h1>Опыт и навыки</h1>
+                <div class="input-group">
+                    <label>Желаемая должность</label>
+                    <div class="selection-grid" data-multi="false">
+                        <div class="selection-item selected" data-value="chatter">Чаттер</div>
+                        <div class="selection-item" data-value="model">Модель</div>
+                        <div class="selection-item" data-value="hr">HR</div>
+                        <div class="selection-item" data-value="admin">Админ</div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="experience-description">Опишите свой опыт</label>
+                    <textarea id="experience-description" class="form-textarea" rows="5"
+                        placeholder="Расскажите о своих предыдущих местах работы, обязанностях и достижениях..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Ключевые навыки (Soft Skills)</label>
+                    <div class="selection-grid" data-multi="true">
+                        <div class="selection-item" data-value="teamwork">Работа в команде</div>
+                        <div class="selection-item" data-value="deadlines">Соблюдение сроков</div>
+                        <div class="selection-item" data-value="communication">Коммуникабельность</div>
+                        <div class="selection-item" data-value="stress-resistance">Стрессоустойчивость</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Контакты -->
+            <div class="form-section">
+                <h1>Контактная информация</h1>
+                <div class="contact-grid">
+                    <div class="input-group">
+                        <label for="contact-telegram">Telegram</label>
+                        <input type="text" id="contact-telegram" class="form-input" placeholder="@username">
+                    </div>
+                    <div class="input-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" class="form-input" placeholder="my@email.com">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Предпросмотр -->
+        <div class="preview-container">
+            <div class="preview-section">
+                <h1>Предварительный просмотр</h1>
+                <div class="item-card preview-card">
+                    <div class="item-header">
+                        <div class="item-header-text">
+                            <h4 class="item-subtitle" id="preview-name">Иван Иванов</h4>
+                            <h2 class="item-title" id="preview-role">Чаттер</h2>
+                        </div>
+                        <div class="item-image">
+                            <div class="preview-photo">
+                                <span>Фото</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="item-body">
+                        <p id="preview-experience">Здесь будет описание вашего опыта...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-primary" type="submit">Опубликовать резюме</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/frontend/scripts/create-resume.js"></script>
+    <script src="/assets/frontend/scripts/navigation-loader.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+/* Dropdown Navigation Styles */
+.dropdown-nav {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    padding: 10px 20px;
+    font-size: var(--h3-size);
+    font-weight: 600;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-small);
+    min-width: 220px; /* Чтобы кнопка не была слишком узкой */
+    justify-content: space-between;
+}
+
+.dropdown-btn:hover, .dropdown-btn.active {
+    border-color: var(--color-secondary);
+}
+
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+}
+
+.dropdown-btn.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-white);
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 10;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-small);
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--color-primary);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: var(--h4-size);
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.dropdown-content a.current {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+}

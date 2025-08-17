@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Craftwork+Grotesk&display=swap');
+
+/* Variables */
+:root {
+    /* Sizes */
+    --h1-size: 24px;
+    --h2-size: 20px;
+    --h3-size: 16px;
+    --h4-size: 12px;
+
+    /* Spacing - унифицированные значения */
+    --gap-small: 8px;
+    --gap-medium: 16px;
+    --gap-large: 24px;
+    --gap-xlarge: 32px;
+
+    /* Border radius - унифицированные значения */
+    --border-radius-small: 12px;
+    --border-radius-medium: 16px;
+    --border-radius-large: 24px;
+    --border-radius-xlarge: 32px;
+    --border-radius-round: 100px;
+
+    /* Colors */
+    --color-primary: rgba(0, 0, 0, 1);
+    --color-secondary: rgba(0, 0, 0, 0.8);
+    --color-tertiary: rgba(0, 0, 0, 0.5);
+    --color-border: rgba(0, 0, 0, 0.25);
+    --color-border-dark: rgba(0, 0, 0, 0.4);
+    --color-white: white;
+    --color-transparent: transparent;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Craftwork Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+h1 {
+    font-size: var(--h1-size);
+    margin: 0;
+}
+
+h2 {
+    font-size: var(--h2-size);
+    margin: 0;
+}
+
+h3 {
+    font-size: var(--h3-size);
+    margin: 0;
+}
+
+h4 {
+    font-size: var(--h4-size);
+    margin: 0;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px var(--gap-xlarge);
+    text-align: center;
+    height: 96px;
+    background: radial-gradient(circle, rgba(83, 83, 83, 1) 0%, rgba(177, 177, 177, 1) 100%);
+    border-radius: 0px 0px var(--gap-xlarge) var(--gap-xlarge);
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--h1-size);
+    margin: 0;
+    color: var(--color-white);
+}
+
+/* Navigation Styles */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-medium);
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li {
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+nav ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: var(--gap-small) var(--gap-medium);
+}
+
+/* Switcher Styles */
+.selected-switcher {
+    padding: var(--gap-small) var(--gap-small);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-small);
+}
+
+.selected-switcher a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0px;
+}
+
+.unselected-switcher {
+    padding: var(--gap-small) var(--gap-small);
+    border-width: 2px;
+    border-style: solid;
+    border-color: hsla(0, 0%, 100%, 0.25);
+    background-color: var(--color-transparent);
+    color: var(--color-white);
+    font-weight: bold;
+    border-radius: var(--border-radius-small);
+}
+
+.unselected-switcher a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0px;
+}
+
+/* Recommendation Section */
+.recommended-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.recommended-container h1 {
+    font-size: var(--h1-size);
+    color: var(--color-primary);
+}
+
+.recommended-item {
+    color: var(--color-secondary);
+    border-color: var(--color-border);
+    border-width: 1px;
+    border-radius: var(--gap-medium);
+    width: fit-content;
+    padding: var(--gap-small) var(--border-radius-small);
+}
+
+/* Recommendation Items Row */
+.recommendations {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-small);
+    overflow-x: auto;
+}
+
+/* Card Layout */
+.card-holder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-large);
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Universal Card Styles (работает для vacancy-card и resume-card) */
+.item-card {
+    display: flex;
+    flex-direction: column;
+    border: var(--color-border-dark);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: var(--gap-xlarge);
+    color: var(--color-primary);
+    width: 480px;
+    gap: var(--gap-medium);
+    padding: var(--gap-medium);
+    height: 200px;
+}
+
+.item-header {
+    display: flex;
+    height: 48px;
+    flex-direction: row;
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: var(--h3-size);
+    justify-content: space-between;
+}
+
+.item-header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-subtitle {
+    font-weight: 500;
+    color: var(--color-tertiary);
+}
+
+.item-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-primary);
+}
+
+.item-attributes-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap-small);
+}
+
+.item-attributes {
+    display: block;
+    color: var(--color-primary);
+    border: 1px solid var(--color-tertiary);
+    border-radius: var(--border-radius-round);
+}
+
+/* Main Container */
+.main-container {
+    margin-top: var(--gap-xlarge);
+    display: grid;
+    grid-template-columns: 340px 1490px;
+    column-gap: var(--gap-large);
+    grid-template-rows: auto auto;
+    width: max-content;
+    gap: var(--gap-large);
+    padding: var(--gap-xlarge);
+}
+
+.age-restriction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--border-radius-round);
+    background-color: var(--color-white);
+}
+
+/* Filter Styles */
+.filters-container {
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    gap: var(--gap-medium);
+    flex-direction: column;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-primary);
+    gap: var(--gap-medium);
+    border: 1px solid var(--color-tertiary);
+    border-radius: var(--gap-large);
+    padding: var(--gap-medium);
+}
+
+.filter-section-tall {
+    height: 178px;
+    flex: 1 1 1;
+}
+
+.filter-section-medium {
+    flex: 1 1 1;
+    width: 162px;
+    height: 103px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-medium);
+    height: 273px;
+}
+
+.filter-grid-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
+}
+
+.filter-grid-right .filter-section {
+    grid-row: 1;
+    grid-column: 2;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.vacation-section {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.salary-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-secondary);
+    padding: 4px;
+    border-radius: var(--border-radius-small);
+    gap: var(--gap-small);
+}
+
+.salary-input {
+    border: none;
+    width: 100%;
+    font-size: var(--h3-size);
+    font-weight: 600;
+    color: var(--color-primary);
+    all: unset;
+    width: 100%;
+}
+
+.selected-bool {
+    border-color: #333;
+    border-style: solid;
+    display: flex;
+    padding: var(--gap-small) 10px;
+    border-radius: var(--border-radius-small);
+    height: 40px;
+}
+
+.customizable-border-box {
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius-small);
+    padding: var(--gap-small);
+    color: var(--color-primary);
+    font-size: var(--gap-medium);
+    font-weight: 500;
+}
+
+/* Legacy class names for backward compatibility */
+.vacancy-card {
+    @extend .item-card;
+}
+
+.resume-card {
+    @extend .item-card;
+}
+
+.vacancy-header {
+    @extend .item-header;
+}
+
+.resume-header {
+    @extend .item-header;
+}
+
+.vacancy-header-text {
+    @extend .item-header-text;
+}
+
+.resume-header-text {
+    @extend .item-header-text;
+}
+
+.vacancy-line {
+    @extend .item-line;
+}
+
+.resume-line {
+    @extend .item-line;
+}
+
+.vacancy-attributes-holder {
+    @extend .item-attributes-holder;
+}
+
+.resume-attributes-holder {
+    @extend .item-attributes-holder;
+}
+
+.vacancy-attributes {
+    @extend .item-attributes;
+}
+
+.resume-attributes {
+    @extend .item-attributes;
+}
+
+.agency-name {
+    @extend .item-subtitle;
+}
+
+.candidate-name {
+    @extend .item-subtitle;
+}
+
+.recomended-container {
+    @extend .recommended-container;
+}
+
+.recomends {
+    @extend .recommendations;
+}
+
+.recomended-vacancy {
+    @extend .recommended-item;
+}
+
+.whole-vacancy-container {
+    @extend .main-container;
+}
+
+.whole-resume-container {
+    @extend .main-container;
+}
+
+.vacancy-shift-duration {
+    @extend .filter-section, .filter-section-tall;
+}
+
+.vacancy-shift-salary {
+    @extend .filter-section, .filter-section-medium;
+}
+
+.vacancy-vacation {
+    @extend .filter-section, .vacation-section;
+}
+
+.vacancy-schedule {
+    @extend .filter-section;
+}
+
+.vacancy-grid-attributes {
+    @extend .filter-grid;
+}
+
+.vacancy-grid-left {
+    @extend .filter-grid-left;
+}
+
+.salary {
+    @extend .salary-input-container;
+}

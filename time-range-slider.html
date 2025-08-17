@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Time Range Slider</title>
+    <link href="https://fonts.googleapis.com/css2?family=Craftwork+Grotesk&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="time-range-slider.css">
+</head>
+
+<body>
+    <div class="time-range-slider">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider-background"></div>
+                <div class="slider-track" id="sliderTrack"></div>
+                <input type="range" id="minSlider" min="4" max="12" step="1" value="6">
+                <input type="range" id="maxSlider" min="4" max="12" step="1" value="10">
+                <div id="minTooltip" class="tooltip">6:00</div>
+                <div id="maxTooltip" class="tooltip">10:00</div>
+            </div>
+        </div>
+        <div id="selectedRange" class="selected-range">Выбрано время: 6:00 - 10:00</div>
+    </div>
+
+    <script src="time-range-slider.js"></script>
+</body>
+
+</html>

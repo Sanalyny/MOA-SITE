@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Создать вакансию - MOA</title>
+    <link rel="stylesheet" href="/assets/frontend/styles/index.css" />
+    <link rel="stylesheet" href="/assets/frontend/styles/create-vacancy.css" />
+    <link rel="stylesheet" href="/assets/frontend/styles/navigation.css" />
+</head>
+
+<body>
+    <header>
+        <div class="age-restriction">18+</div>
+        <h1 class="header-title">Создать вакансию</h1>
+        <nav class="purpose">
+            <ul>
+                <li class="unselected-switcher"><a href="resumes.html">Резюме</a></li>
+                <li class="unselected-switcher"><a href="index.html">Вакансии</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="create-vacancy-container">
+        <div class="form-container">
+            <div class="form-section">
+                <h1>Основная информация</h1>
+
+                <div class="input-group">
+                    <label>Тип вакансии</label>
+                    <div class="selection-grid">
+                        <div class="selection-item selected" data-value="chatter" data-title="Чаттер">Чаттер</div>
+                        <div class="selection-item" data-value="model" data-title="Модель">Модель</div>
+                        <div class="selection-item" data-value="hr" data-title="HR">HR</div>
+                        <div class="selection-item" data-value="admin" data-title="Админ">Админ</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="agency-name">Название агентства</label>
+                    <input type="text" id="agency-name" class="form-input" placeholder="Например: OnlyAgency">
+                </div>
+
+                <div class="input-group">
+                    <label for="vacancy-description">Описание вакансии</label>
+                    <textarea id="vacancy-description" class="form-textarea" rows="4"
+                        placeholder="Опишите требования, обязанности и условия работы..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="agency-logo">Логотип агентства</label>
+                    <div class="file-upload-container">
+                        <input type="file" id="agency-logo" class="file-input" accept="image/*">
+                        <div class="file-upload-preview">
+                            <div class="upload-placeholder">
+                                <span>Загрузить логотип</span>
+                                <small>PNG, JPG до 2MB</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h1>Требования</h1>
+
+                <div class="input-group">
+                    <label>Уровень английского</label>
+                    <div class="selection-grid">
+                        <div class="selection-item" data-value="A1">A1</div>
+                        <div class="selection-item" data-value="A2">A2</div>
+                        <div class="selection-item" data-value="B1">B1</div>
+                        <div class="selection-item" data-value="B2">B2</div>
+                        <div class="selection-item selected" data-value="B2+">B2+</div>
+                        <div class="selection-item" data-value="C1">C1</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="experience">Опыт работы</label>
+                    <div class="selection-grid">
+                        <div class="selection-item" data-value="no-experience">Без опыта</div>
+                        <div class="selection-item" data-value="3-months">от 3 месяцев</div>
+                        <div class="selection-item selected" data-value="6-months">от 6 месяцев</div>
+                        <div class="selection-item" data-value="1-year">от 1 года</div>
+                        <div class="selection-item" data-value="2-years">от 2 лет</div>
+                        <div class="selection-item" data-value="3-years">от 3 лет</div>
+                    </div>
+                </div>
+
+                <!-- Специфичные требования для разных типов вакансий -->
+                <div id="specific-requirements">
+                    <!-- Чаттер -->
+                    <div class="specific-section" data-for="chatter">
+                        <div class="input-group">
+                            <label>Количество моделей одновременно</label>
+                            <div class="selection-grid">
+                                <div class="selection-item selected" data-value="1-model">1 модель</div>
+                                <div class="selection-item" data-value="2-models">2 модели</div>
+                                <div class="selection-item" data-value="3-models">3 модели</div>
+                                <div class="selection-item" data-value="4-models">4+ модели</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Админ -->
+                    <div class="specific-section" data-for="admin" style="display: none;">
+                        <div class="input-group">
+                            <label>Количество моделей в управлении</label>
+                            <div class="selection-grid">
+                                <div class="selection-item selected" data-value="5-models">5-10 моделей</div>
+                                <div class="selection-item" data-value="10-models">10-20 моделей</div>
+                                <div class="selection-item" data-value="20-models">20+ моделей</div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Количество чаттеров в управлении</label>
+                            <div class="selection-grid">
+                                <div class="selection-item selected" data-value="5-chatters">5-10 чаттеров</div>
+                                <div class="selection-item" data-value="10-chatters">10-20 чаттеров</div>
+                                <div class="selection-item" data-value="20-chatters">20+ чаттеров</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HR -->
+                    <div class="specific-section" data-for="hr" style="display: none;">
+                        <div class="input-group">
+                            <label>Опыт найма персонала</label>
+                            <div class="selection-grid">
+                                <div class="selection-item selected" data-value="basic-hiring">Базовый найм</div>
+                                <div class="selection-item" data-value="mass-hiring">Массовый найм</div>
+                                <div class="selection-item" data-value="executive-search">Executive поиск</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Модель -->
+                    <div class="specific-section" data-for="model" style="display: none;">
+                        <div class="input-group">
+                            <label>Готовность к камере</label>
+                            <div class="selection-grid">
+                                <div class="selection-item selected" data-value="face-ok">Лицо + тело</div>
+                                <div class="selection-item" data-value="body-only">Только тело</div>
+                                <div class="selection-item" data-value="partial">Частично</div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Возрастная категория</label>
+                            <div class="selection-grid">
+                                <div class="selection-item selected" data-value="18-25">18-25</div>
+                                <div class="selection-item" data-value="25-35">25-35</div>
+                                <div class="selection-item" data-value="35+">35+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Технические навыки</label>
+                    <div class="skills-selection">
+                        <div class="skill-category">
+                            <h4>Платформы:</h4>
+                            <div class="selection-grid" data-multi="true">
+                                <div class="selection-item" data-value="onlymonster">OnlyMonster</div>
+                                <div class="selection-item" data-value="onlyfans">OnlyFans</div>
+                                <div class="selection-item" data-value="fansly">Fansly</div>
+                                <div class="selection-item" data-value="chaturbate">Chaturbate</div>
+                                <div class="selection-item" data-value="stripchat">StripChat</div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Инструменты:</h4>
+                            <div class="selection-grid" data-multi="true">
+                                <div class="selection-item" data-value="photoshop">Photoshop</div>
+                                <div class="selection-item" data-value="obs">OBS Studio</div>
+                                <div class="selection-item" data-value="telegram">Telegram</div>
+                                <div class="selection-item" data-value="discord">Discord</div>
+                                <div class="selection-item" data-value="analytics">Аналитика</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Soft Skills</label>
+                    <div class="selection-grid" data-multi="true">
+                        <div class="selection-item" data-value="teamwork">Работа в команде</div>
+                        <div class="selection-item" data-value="deadlines">Соблюдение сроков</div>
+                        <div class="selection-item" data-value="targets">Выполнение плана</div>
+                        <div class="selection-item" data-value="communication">Коммуникабельность</div>
+                        <div class="selection-item" data-value="stress-resistance">Стрессоустойчивость</div>
+                        <div class="selection-item" data-value="multitasking">Многозадачность</div>
+                        <div class="selection-item" data-value="creativity">Креативность</div>
+                        <div class="selection-item" data-value="responsibility">Ответственность</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h1>Условия работы</h1>
+
+                <div class="conditions-grid">
+                    <div class="input-group">
+                        <label for="salary-from">Зарплата от</label>
+                        <div class="salary-input-container">
+                            <input type="number" id="salary-from" class="salary-input" placeholder="600">
+                            <span class="currency">$</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="salary-to">Зарплата до</label>
+                        <div class="salary-input-container">
+                            <input type="number" id="salary-to" class="salary-input" placeholder="1200">
+                            <span class="currency">$</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="work-hours">Часов в день</label>
+                        <select id="work-hours" class="form-select">
+                            <option value="4">4 часа</option>
+                            <option value="6" selected>6 часов</option>
+                            <option value="8">8 часов</option>
+                            <option value="12">12 часов</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="payment-type">Тип оплаты</label>
+                        <input type="text" id="payment-type" class="form-input" placeholder="20% + 50$">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>График работы</label>
+                    <div class="selection-grid">
+                        <div class="selection-item selected" data-value="2/2">2/2</div>
+                        <div class="selection-item" data-value="5/2">5/2</div>
+                        <div class="selection-item" data-value="6/1">6/1</div>
+                        <div class="selection-item" data-value="flexible">Плавающий</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Отпуск</label>
+                    <div class="selection-grid">
+                        <div class="selection-item selected" data-value="with-vacation">С отпуском</div>
+                        <div class="selection-item" data-value="without-vacation">Без отпуска</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h1>Контактная информация</h1>
+
+                <div class="contact-grid">
+                    <div class="input-group">
+                        <label for="contact-person">Контактное лицо</label>
+                        <input type="text" id="contact-person" class="form-input" placeholder="Имя HR">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="contact-telegram">Telegram</label>
+                        <input type="text" id="contact-telegram" class="form-input" placeholder="@username">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" class="form-input" placeholder="hr@agency.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="contact-phone">Телефон</label>
+                        <input type="tel" id="contact-phone" class="form-input" placeholder="+7 (999) 123-45-67">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-section">
+                <h1>Предварительный просмотр</h1>
+
+                <div class="item-card preview-card">
+                    <div class="item-header">
+                        <div class="item-header-text">
+                            <h4 class="item-subtitle">OnlyAgency</h4>
+                            <h2 class="item-title">Чаттер в OnlyFans</h2>
+                        </div>
+                        <div class="item-image">
+                            <div class="preview-logo">
+                                <span>Лого</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="item-body">
+                        <div class="item-attributes-holder">
+                            <li class="unselected-switcher item-attributes">B2+</li>
+                            <li class="unselected-switcher item-attributes">от 6 месяцев</li>
+                            <li class="unselected-switcher item-attributes">от 600$</li>
+                            <li class="unselected-switcher item-attributes">6 часов</li>
+                            <li class="unselected-switcher item-attributes">20% + 50$</li>
+                            <li class="unselected-switcher item-attributes">OnlyMonster</li>
+                            <li class="unselected-switcher item-attributes">Подробнее...</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-secondary" type="button">Сохранить как черновик</button>
+                <button class="btn-primary" type="submit">Отправить на модерацию</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/frontend/scripts/create-vacancy.js"></script>
+    <script src="/assets/frontend/scripts/navigation-loader.js"></script>
+</body>
+
+</html>

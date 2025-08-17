@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Резюме - MOA</title>
+    <link rel="stylesheet" href="/assets/frontend/styles/index.css" />
+    <link rel="stylesheet" href="/assets/frontend/styles/navigation.css" />
+</head>
+
+<body>
+    <header>
+        <div class="age-restriction">18+</div>
+        <h1 class="header-title">Найди любимого раба</h1>
+        <nav class="purpose">
+            <ul>
+                <li class="selected-switcher"><a href="#">Резюме</a></li>
+                <li class="unselected-switcher"><a href="index.html">Вакансии</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-container">
+        <div class="recommended-container">
+            <h1>Рекомендуемые должности</h1>
+            <div class="recommendations">
+                <div class="customizable-border-box">Чаттер</div>
+                <div class="customizable-border-box">Админ</div>
+                <div class="customizable-border-box">HR</div>
+                <div class="customizable-border-box">Модель</div>
+                <div class="customizable-border-box">Режисёр</div>
+            </div>
+        </div>
+        <div class="card-holder">
+            <div class="item-card">
+                <div class="item-header">
+                    <div class="item-header-text">
+                        <h4 class="item-subtitle">Иван Иванов</h4>
+                        <h2 class="item-title">Чаттер в OnlyFans</h2>
+                    </div>
+                    <div class="item-image">
+                        <img src="/assets/frontend/images/temp_image.png"
+                            style="border-radius: 24px; width: 48px; height: 48px;" alt="Candidate Photo" />
+                    </div>
+                </div>
+                <div class="item-line"></div>
+                <div class="item-body">
+                    <div class="item-attributes-holder">
+                        <li class="unselected-switcher item-attributes">B2+</li>
+                        <li class="unselected-switcher item-attributes">2 года опыта</li>
+                        <li class="unselected-switcher item-attributes">от 600$</li>
+                        <li class="unselected-switcher item-attributes">6 часов</li>
+                        <li class="unselected-switcher item-attributes">20% + 50$</li>
+                        <li class="unselected-switcher item-attributes">OnlyMonster</li>
+                        <li class="unselected-switcher item-attributes">Подробнее...</li>
+                    </div>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-header">
+                    <div class="item-header-text">
+                        <h4 class="item-subtitle">Мария Петрова</h4>
+                        <h2 class="item-title">HR Менеджер</h2>
+                    </div>
+                    <div class="item-image">
+                        <img src="/assets/frontend/images/temp_image.png"
+                            style="border-radius: 24px; width: 48px; height: 48px;" alt="Candidate Photo" />
+                    </div>
+                </div>
+                <div class="item-line"></div>
+                <div class="item-body">
+                    <div class="item-attributes-holder">
+                        <li class="unselected-switcher item-attributes">C1</li>
+                        <li class="unselected-switcher item-attributes">3 года опыта</li>
+                        <li class="unselected-switcher item-attributes">от 800$</li>
+                        <li class="unselected-switcher item-attributes">8 часов</li>
+                        <li class="unselected-switcher item-attributes">Фиксированная</li>
+                        <li class="unselected-switcher item-attributes">Различные</li>
+                        <li class="unselected-switcher item-attributes">Подробнее...</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filters-container">
+            <div class="filter-section filter-section-tall">
+                <h1>Время смены</h1>
+                <h4>Выберете, сколько времени в день кандидат готов работать, от и до</h4>
+                <link rel="stylesheet" href="/time-range-slider.css">
+                <script src="/time-range-slider.js"></script>
+
+                <div class="time-range-slider">
+                    <div class="slider-container">
+                        <input type="range" id="minSlider" min="4" max="12" step="1" value="6">
+                        <input type="range" id="maxSlider" min="4" max="12" step="1" value="10">
+                        <div class="slider-track" id="sliderTrack"></div>
+                    </div>
+                    <div id="selectedRange" class="selected-range">Выбрано время: 6:00 - 10:00</div>
+                </div>
+            </div>
+            <div class="filter-grid">
+                <div class="filter-grid-left">
+                    <div class="filter-section filter-section-medium">
+                        <h1>Зарплата</h1>
+                        <div class="salary-input-container">
+                            <h3>От:</h3>
+                            <input type="number" class="salary-input" placeholder="600$" />
+                        </div>
+                    </div>
+                    <div class="filter-section vacation-section">
+                        <h1>Отпуск</h1>
+                        <div class="customizable-border-box">С отпуском</div>
+                        <div class="customizable-border-box">Без Отпуска</div>
+                    </div>
+                </div>
+                <div class="filter-grid-right">
+                    <div class="filter-section">
+                        <h1>График</h1>
+                        <div class="customizable-border-box">2/2</div>
+                        <div class="customizable-border-box">5/2</div>
+                        <div class="customizable-border-box">6/1</div>
+                        <div class="customizable-border-box">Плавающий</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/frontend/scripts/navigation-loader.js"></script>
+</body>
+
+</html>

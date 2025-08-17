@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+
+    <!-- Подключаем шрифт Craftwork Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Craftwork+Grotesk&display=swap" rel="stylesheet" />
+
+    <style>
+        /* Центрируем весь контент по центру экрана */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Craftwork Grotesk', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            /* можно поменять фон при желании */
+        }
+
+        /* Контейнер слайдера */
+        .slider-container {
+            position: relative;
+            width: 500px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            appearance: none;
+            background: transparent;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #007bff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 6px;
+            background: linear-gradient(to right, #4caf50, #007bff);
+            border-radius: 4px;
+        }
+
+        .tooltip {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: left 0.2s;
+        }
+
+        /* Отступ сверху от слайдера до текста */
+        #selectedLevel {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <input type="range" id="levelSlider" min="0" max="5" step="1" value="2" />
+        <div id="tooltip" class="tooltip">B1 – Intermediate</div>
+        <p id="selectedLevel">Вы выбрали: B1 – Intermediate</p>
+    </div>
+
+    <script>
+        const slider = document.getElementById('levelSlider');
+        const tooltip = document.getElementById('tooltip');
+        const selectedLevel = document.getElementById('selectedLevel');
+
+        const levels = [
+            { code: 'A1', name: 'Beginner' },
+            { code: 'A2', name: 'Elementary' },
+            { code: 'B1', name: 'Intermediate' },
+            { code: 'B2', name: 'Upper-Intermediate' },
+            { code: 'C1', name: 'Advanced' },
+            { code: 'C2', name: 'Proficient' }
+        ];
+
+        function updateTooltip(value) {
+            const level = levels[value];
+            tooltip.textContent = `${level.code} – ${level.name}`;
+            selectedLevel.textContent = `Вы выбрали: ${level.code} – ${level.name}`;
+
+            // Позиционирование tooltip
+            const percent = (value / (levels.length - 1)) * 100;
+            tooltip.style.left = `calc(${percent}% + (${8 - percent * 0.15}px))`;
+        }
+
+        slider.addEventListener('input', (e) => {
+            updateTooltip(e.target.value);
+        });
+
+        updateTooltip(slider.value);
+    </script>
+</body>
+
+</html>
