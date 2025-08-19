@@ -93,3 +93,7 @@ async function loadVacancies() {
 
 // Запускаем загрузку при полной загрузке DOM
 document.addEventListener('DOMContentLoaded', loadVacancies);
+
+
+// TODO:
+// 
