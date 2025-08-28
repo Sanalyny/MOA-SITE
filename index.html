@@ -3,146 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Вакансии - MOA Hunter</title>
+    <title>MOA Hunter</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        /* Минимальные стили, если их нет в твоём css */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+            background: linear-gradient(135deg, #9c0d5d, #0d1d0d);
+        }
+
+        .top-left {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 10px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <div class="age-restriction">18+</div>
-        <h1 class="header-title">Найди любимую каторгу</h1>
-        <nav class="purpose">
-            <ul>
-                <li class="unselected-switcher"><a href="resumes.html">Резюме</a></li>
-                <li class="selected-switcher"><a href="#">Вакансии</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="top-left">18+</div>
+    <div class="container">
+        <h1 style="color: white">Привет, это главная страница MOA Hunter.</h1>
 
-    <div class="main-container">
-
-        <!-- Фильтры -->
-        <div class="filters-container">
-            <div class="filter-section filter-section-tall">
-                <h1>Время смены</h1>
-                <h4>Выберите время (от/до)</h4>
-                <div class="time-range-slider">
-                    <div class="slider-container">
-                        <input type="range" id="minSlider" min="4" max="12" step="1" value="6">
-                        <input type="range" id="maxSlider" min="4" max="12" step="1" value="10">
-                        <div class="slider-track" id="sliderTrack"></div>
-                    </div>
-                    <div id="selectedRange" class="selected-range">Выбрано время: 6:00 - 10:00</div>
-                </div>
-            </div>
-
-            <div class="filter-grid">
-                <div class="filter-grid-left">
-                    <div class="filter-section filter-section-medium">
-                        <h1>Зарплата</h1>
-                        <div class="salary-input-container">
-                            <h3>От:</h3>
-                            <input type="number" class="salary-input" placeholder="600$" />
-                        </div>
-                    </div>
-
-                    <div class="filter-section vacation-section">
-                        <h1>Отпуск</h1>
-                        <div class="customizable-border-box">С отпуском</div>
-                        <div class="customizable-border-box">Без отпуска</div>
-                    </div>
-                </div>
-
-                <div class="filter-grid-right">
-                    <div class="filter-section">
-                        <h1>График</h1>
-                        <div class="customizable-border-box">2/2</div>
-                        <div class="customizable-border-box">5/2</div>
-                        <div class="customizable-border-box">6/1</div>
-                        <div class="customizable-border-box">Плавающий</div>
-                    </div>
-                </div>
-            </div>
+        <div class="buttons">
+            <a class="btn" href="/assets/frontend/pages/resumes.html">Резюме</a>
+            <a class="btn" href="/assets/frontend/pages/index.html">Вакансии</a>
         </div>
 
-        <!-- Контент справа -->
-        <div class="recommended-container">
-            <h1>Рекомендуемые должности</h1>
-            <div class="recommendations">
-                <div class="customizable-border-box">Чаттер</div>
-                <div class="customizable-border-box">Админ</div>
-                <div class="customizable-border-box">HR</div>
-                <div class="customizable-border-box">Модель</div>
-                <div class="customizable-border-box">Режиссёр</div>
-            </div>
-        </div>
-
-        <div class="card-holder" id="vacancies">
-            <div class="item-card">
-                <div class="item-header">
-                    <div class="item-header-text">
-                        <h4 class="item-subtitle">OnlyAgency</h4>
-                        <h2 class="item-title">Чаттер в OnlyFans</h2>
-                    </div>
-                    <div class="item-image">
-                        <img src="/assets/frontend/images/temp_image.png" alt="Agency Logo"
-                            style="border-radius: 24px; width: 48px; height: 48px;">
-                    </div>
-                </div>
-                <div class="item-line"></div>
-                <div class="item-body">
-                    <div class="item-attributes-holder">
-                        <li class="unselected-switcher item-attributes">B2+</li>
-                        <li class="unselected-switcher item-attributes">от 6 месяцев</li>
-                        <li class="unselected-switcher item-attributes">от 600$</li>
-                        <li class="unselected-switcher item-attributes">6 часов</li>
-                        <li class="unselected-switcher item-attributes">20% + 50$</li>
-                        <li class="unselected-switcher item-attributes">OnlyMonster</li>
-                        <li class="unselected-switcher item-attributes">Подробнее...</li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="item-header">
-                    <div class="item-header-text">
-                        <h4 class="item-subtitle">OnlyAgency</h4>
-                        <h2 class="item-title">Модератор чата</h2>
-                    </div>
-                    <div class="item-image">
-                        <img src="/assets/frontend/images/temp_image.png" alt="Agency Logo"
-                            style="border-radius: 24px; width: 48px; height: 48px;">
-                    </div>
-                </div>
-                <div class="item-line"></div>
-                <div class="item-body">
-                    <div class="item-attributes-holder">
-                        <li class="unselected-switcher item-attributes">C1</li>
-                        <li class="unselected-switcher item-attributes">от 1 года</li>
-                        <li class="unselected-switcher item-attributes">от 1000$</li>
-                        <li class="unselected-switcher item-attributes">8 часов</li>
-                        <li class="unselected-switcher item-attributes">30%</li>
-                        <li class="unselected-switcher item-attributes">OnlyMonster</li>
-                        <li class="unselected-switcher item-attributes">Подробнее...</li>
-                    </div>
-                </div>
-            </div>
+        <div class="buttons">
+            <a class="btn" href="/assets/frontend/pages/create-resume.html">Написать резюме</a>
+            <a class="btn" href="/assets/frontend/pages/create-vacancy.html">Создать вакансию</a>
         </div>
     </div>
-
-    <!-- Скрипт для ползунка времени -->
-    <script>
-        const minSlider = document.getElementById("minSlider");
-        const maxSlider = document.getElementById("maxSlider");
-        const selectedRange = document.getElementById("selectedRange");
-
-        function updateRange() {
-            selectedRange.textContent = `Выбрано время: ${minSlider.value}:00 - ${maxSlider.value}:00`;
-        }
-
-        minSlider.addEventListener("input", updateRange);
-        maxSlider.addEventListener("input", updateRange);
-    </script>
 </body>
 
 </html>
